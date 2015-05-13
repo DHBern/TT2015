@@ -21,10 +21,19 @@ repository. A *repository* is a place for all your stuff, or a place for all the
 of a group.
 
 1. Choose a directory (folder) on your computer that you want to track. It might be a new (and empty) folder, or it might be one that you have some work in (e.g. your homework for this class.)
+
 2. 
   * (Windows) Open Git Bash and go to your directory.
   * (Mac) Open a Terminal window and go to your directory.
+
+3. Run the following commands. You will only ever have to do this once.
+
+		git config --global user.name "Your Name"
+		git config --global user.email "your.name@student.unibe.ch" <-- whatever you just used to sign up
+		git config --global push.default simple  <-- make things easier later on
+
 3. Run the command `git init`. Voilà, you are using version control! Everything in this directory, and all changes you make and tell Git about, will be kept track of. This directory is now a Git repository.
+
 4. Run the command `git status`. The output should look like this:
 
 		On branch master
@@ -65,7 +74,7 @@ The idea here is that changes can go together logically. You make some changes t
 
 The `git commit` command always needs a *message*. This is a memo for you, to remind you want this change was about. So let's run the command:
 
-	git commit -m "This is my first Git commit".
+	git commit -m "This is my first Git commit"
 	
 You'll get output that looks like this:
 
@@ -94,16 +103,22 @@ We'll now put the repositories we just made on Github (or Bitbucket, if you are 
 
 3. Go to the repository you've made and look for its "HTTPS clone URL" in the sidebar on the right. Copy that URL.
 
-4. Go back to your Git Bash / Terminal window and run these commands. You will only ever have to do this once, and it will make things easier for you later.
-
-		git config --global user.name "Your Name"
-		git config --global user.email "your.name@student.unibe.ch" <-- whatever you just used to sign up
-		git config --global push.default simple  <-- make things easier later on
-	
 4. Go back to your Git Bash / Terminal window and run the command
 
 		git remote add origin [that URL you just copied]
+		
+	Next, run
+	
 		git remote -v
+		
+	and make sure you have a message like this:
+	
+		origin	https://github.com/tla/dd_repo.git (fetch)
+		origin	https://github.com/tla/dd_repo.git (push)
+		
+	Finally, run
+	
+		git push --set-upstream origin master
     
 5. Now you have the two directories connected, so it's time to bring them into sync. You do this with the `git push` command.
     
