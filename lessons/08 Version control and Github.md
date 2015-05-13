@@ -116,19 +116,13 @@ We'll now put the repositories we just made on Github (or Bitbucket, if you are 
 		origin	https://github.com/tla/dd_repo.git (fetch)
 		origin	https://github.com/tla/dd_repo.git (push)
 		
-	Finally, run
+5. Now you have the two directories connected, so it's time to bring them into sync. You do this with the `git push` command. The very first time you do this, it will look like:
 	
 		git push --set-upstream origin master
-    
-5. Now you have the two directories connected, so it's time to bring them into sync. You do this with the `git push` command.
-    
-6. Now your `git status` message looks a little different!
+		
+	and thereafter, you can simply say `git push` to push.
 
-		On branch master
-		Your branch is up-to-date with 'origin/master'.
-		nothing to commit, working directory clean
-
-7. Practice again the make change / add / commit / push cycle.
+6. Practice again the make change / add / commit / push cycle.
 
 		[make a change to a file or two]
 		git add my_file1 my_file2
